@@ -157,7 +157,7 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
                 if let model = try? GenderNet(contentsOf: compiledAddress) {
                     genderNet = model
                 }
-            case .googLeNetPlaces:
+            case .googleNetPlaces:
                 if let model = try? GoogLeNetPlaces(contentsOf: compiledAddress) {
                     googLeNetPlaces = model
                 }

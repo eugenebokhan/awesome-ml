@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoreMLModel: NSObject {
+public class CoreMLModel: NSObject {
     
     // MARK: - Properties
     

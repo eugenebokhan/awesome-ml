@@ -37,7 +37,6 @@ class ImageProcessingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CoreMLStore.fillImageProcessingModelsArray()
         setupCollectionView()
         setupNotifications()
         setupStatusBarBackgroundView()
