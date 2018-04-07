@@ -45,7 +45,7 @@ class CoreMLStore: NSObject {
     
     
     
-    static let styleTransferModels: [CoreMLModel] = [normalModel, fnsWaveModel, fnsRainPrincessModel, fnsCandyModel, fnsFeathersModel, fnsUndieModel, fnsLaMuseModel, fnsMosaicModel, fnsTheScreamModel]
+    static let styleTransferModels: [CoreMLModel] = [normalModel, fnsCandyModel, fnsFeathersModel, fnsUndieModel, fnsLaMuseModel, fnsMosaicModel, fnsTheScreamModel]
     
     static func isModelDownloaded(coreMLModel: CoreMLModel?) -> Bool {
         guard let coreMLModel = coreMLModel else { return false }

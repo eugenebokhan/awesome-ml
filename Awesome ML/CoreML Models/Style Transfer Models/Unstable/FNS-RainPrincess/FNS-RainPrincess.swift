@@ -78,7 +78,7 @@ class FNSRainPrincess {
     
     /// Construct a model that automatically loads the model from the app's bundle
     convenience init() {
-        let bundle = Bundle(for: rain_princess.self)
+        let bundle = Bundle(for: FNSRainPrincess.self)
         let assetPath = bundle.url(forResource: "rain_princess", withExtension:"mlmodelc")
         try! self.init(contentsOf: assetPath!)
     }

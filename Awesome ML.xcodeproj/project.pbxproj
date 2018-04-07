@@ -1004,6 +1004,25 @@
 			path = IteratorTools;
 			sourceTree = "<group>";
 		};
+		18C5AB15207980D600E7D338 /* Unstable */ = {
+			isa = PBXGroup;
+			children = (
+				189EED9F20797C0700E23B74 /* FNS-Wave */,
+				189EED9A20797B6700E23B74 /* FNS-RainPrincess */,
+			);
+			path = Unstable;
+			sourceTree = "<group>";
+		};
+		18C5AB16207980F500E7D338 /* Unstable */ = {
+			isa = PBXGroup;
+			children = (
+				18A6A416206520E700C9FEFD /* VGG16 */,
+				18A6A415206520CE00C9FEFD /* RN1015k500 */,
+				18A6A3DC20651D7B00C9FEFD /* CNNEmotions */,
+			);
+			path = Unstable;
+			sourceTree = "<group>";
+		};
 		18C5B7A620765EF6007BCE1F /* Image Processing Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,14 +1036,12 @@
 				18A6A4192065210800C9FEFD /* Nudity */,
 				18A6A418206520FF00C9FEFD /* Oxford102 */,
 				18A6A417206520F500C9FEFD /* Resnet50 */,
-				18A6A416206520E700C9FEFD /* VGG16 */,
-				18A6A415206520CE00C9FEFD /* RN1015k500 */,
 				18A6A413206520AD00C9FEFD /* VisualSentimentCNN */,
 				18A6A3E220651E0E00C9FEFD /* FlickrStyle */,
-				18A6A3DC20651D7B00C9FEFD /* CNNEmotions */,
 				18A6A3D720651C5500C9FEFD /* CarRecognition */,
 				18A6A3D220651B3300C9FEFD /* AgeNet */,
 				18FE25BE2062A78300B749C6 /* TinyYOLO */,
+				18C5AB16207980F500E7D338 /* Unstable */,
 			);
 			path = "Image Processing Models";
 			sourceTree = "<group>";
@@ -1032,14 +1049,13 @@
 		18C5B7A92076638E007BCE1F /* Style Transfer Models */ = {
 			isa = PBXGroup;
 			children = (
-				189EED9F20797C0700E23B74 /* FNS-Wave */,
-				189EED9A20797B6700E23B74 /* FNS-RainPrincess */,
 				18D28BEF2076ED80003B9907 /* FNS-Feathers */,
 				18D28BEA2076EAAF003B9907 /* FNS-Udnie */,
 				18D28BE92076EAA2003B9907 /* FNS-LaMuse */,
 				18D28BE82076EA95003B9907 /* FNS-Mosaic */,
 				18D28BD92076E6FE003B9907 /* FNS-TheScream */,
 				18D28BD62076E6AA003B9907 /* FNS-Candy */,
+				18C5AB15207980D600E7D338 /* Unstable */,
 			);
 			path = "Style Transfer Models";
 			sourceTree = "<group>";
