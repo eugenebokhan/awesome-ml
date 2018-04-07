@@ -18,9 +18,15 @@ Features
 * On-device CoreML model compilation.
 * Learn how to implement the interaction with different models.
 
+
+<p align="left">
+    <img src="Media/Style_Transfer_Demo.png", width="800">
+</p>
 <p align="left">
     <img src="Media/App-Demo-Transparent-Background.gif", width="800">
 </p>
+
+
 
 Requirements
 ---
