@@ -27,15 +27,32 @@ public enum CoreMLType: String {
     case rn1015k500 = "RN1015k500"
     case vgg16 = "VGG16"
     case visualSentimentCNN = "VisualSentimentCNN"
+    
+    case fnsCandy = "FNS-Candy"
+    case fnsTheScream = "FNS-TheScream"
+    case fnsUndie = "FNS-Undie"
+    case fnsLaMuse = "FNS-LaMuse"
+    case fnsMosaic = "FNS-Mosaic"
+    case fnsFeathers = "FNS-Feathers"
+    case fnsRainPrincess = "FNS-RainPrincess"
+    case fnsWave = "FNS-Wave"
+    case normal = "Normal"
 }
 
 class CoreMLStore: NSObject {
     
-    static var imageProcessingModels: [CoreMLModel] = [mobileOpenPoseModel, carRecognitionModel, tinyYOLOModel, visualSentimentCNNModel, googLeNetPlacesModel,oxford102Model, food101Model, resnet50Model, flickrStyleModel, mobileNetModel, nudityModel, inceptionv3Model, mnistModel, ageNetModel]
+    static let imageProcessingModels: [CoreMLModel] = [mobileOpenPoseModel, carRecognitionModel, tinyYOLOModel, visualSentimentCNNModel, googLeNetPlacesModel,oxford102Model, food101Model, resnet50Model, flickrStyleModel, mobileNetModel, nudityModel, inceptionv3Model, mnistModel, ageNetModel]
+    
+    
+    
+    static let styleTransferModels: [CoreMLModel] = [normalModel, fnsWaveModel, fnsRainPrincessModel, fnsCandyModel, fnsFeathersModel, fnsUndieModel, fnsLaMuseModel, fnsMosaicModel, fnsTheScreamModel]
     
     static func isModelDownloaded(coreMLModel: CoreMLModel?) -> Bool {
         guard let coreMLModel = coreMLModel else { return false }
-        return FileManager.default.fileExists(atPath: coreMLModel.localCompiledURL.path)
+        guard let localCompiledURL = coreMLModel.localCompiledURL else { return false }
+        return FileManager.default.fileExists(atPath: localCompiledURL.path)
     }
 
 }
+
+let normalModel = CoreMLModel(name: "Normal", coreMLType: .normal, shortDescription: "No Filter", detailedDescription: "", image: #imageLiteral(resourceName: "Normal Style"), inputWidth: 720, inputHeight: 720, remoteURL: nil, remoteZipURL: nil, license: "")

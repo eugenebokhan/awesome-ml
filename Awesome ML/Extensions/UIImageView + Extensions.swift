@@ -18,4 +18,12 @@ public extension UIImageView {
         self.layer.masksToBounds = false
     }
     
+    func setImage(_ newImage: UIImage) {
+        UIView.transition(with: self,
+                          duration:0.3,
+                          options: .transitionCrossDissolve,
+                          animations: { self.image = newImage },
+                          completion: nil)
+    }
+    
 }

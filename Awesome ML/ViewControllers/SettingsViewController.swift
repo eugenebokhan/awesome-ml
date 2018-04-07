@@ -122,4 +122,6 @@ extension SettingsViewController: UITableViewDataSource {
         downloadedModelsTableView.reloadSections(sections as IndexSet, with: .automatic)
     }
     
+    
+    
 }

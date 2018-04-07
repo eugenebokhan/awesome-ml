@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14105" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RunCoreMLViewController" customModule="Awesome_CoreML" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RunCoreMLViewController" customModule="Awesome_ML" customModuleProvider="target">
             <connections>
                 <outlet property="bottomBlurView" destination="0qm-vh-k5B" id="hsO-au-LeY"/>
                 <outlet property="bottomBlurViewHeightConstraint" destination="t9S-fL-E1v" id="d5s-P1-nCm"/>
@@ -40,7 +40,7 @@
                         <constraint firstAttribute="width" secondItem="wJO-0F-Gvx" secondAttribute="height" multiplier="3:4" constant="-58.5" id="LEA-NX-1zD"/>
                     </constraints>
                 </view>
-                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CL1-yc-uYn" userLabel="Close Button Visual Effetct View" customClass="DesignableVisualEffectView" customModule="Awesome_CoreML" customModuleProvider="target">
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CL1-yc-uYn" userLabel="Close Button Visual Effetct View" customClass="DesignableVisualEffectView" customModule="Awesome_ML" customModuleProvider="target">
                     <rect key="frame" x="327" y="40" width="28" height="28"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GvO-kl-mSf">
                         <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -78,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqV-oL-4KU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqV-oL-4KU">
                                 <rect key="frame" x="15" y="157" width="345" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="108" id="1OI-im-VHe"/>

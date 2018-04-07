@@ -307,7 +307,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let descriptionTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DetailDescriptionTableViewCell") as! DetailDescriptionTableViewCell
-        descriptionTableViewCell.descriptionMarkdownView.load(markdown: coreMLModel.modelDescription, enableImage: true)
+        descriptionTableViewCell.descriptionMarkdownView.load(markdown: coreMLModel.detailedDescription, enableImage: true)
         descriptionTableViewCell.descriptionMarkdownView.onRendered = { height in
             descriptionTableViewCell.backgroundViewHeightConstraint.constant = height
             tableView.rowHeight = height + 24

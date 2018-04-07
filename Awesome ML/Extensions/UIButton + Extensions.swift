@@ -18,4 +18,12 @@ public extension UIButton {
         self.layer.masksToBounds = false
     }
     
+    func setTitle(_ newTitle: String) {
+        UIView.transition(with: self,
+                          duration:0.3,
+                          options: .transitionCrossDissolve,
+                          animations: { self.setTitle(newTitle, for: .normal) },
+                          completion: nil)
+    }
+    
 }

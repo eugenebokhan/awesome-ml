@@ -25,12 +25,21 @@ extension UIView {
         }
     }
     
-    func createImage() -> UIImage {
+}
+
+extension UIView {
+    
+    func createImage() -> UIImage? {
         
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
-        }
+        let rect: CGRect = self.frame
+        
+        UIGraphicsBeginImageContext(rect.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        self.layer.render(in: context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
         
     }
     
