@@ -22,7 +22,7 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>We need access to your iPhone's camera in order to let you test the Core ML models.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
+	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We need access to your iPhone's photo library in order to let you test the Core ML models.</string>
 	<key>UIAppFonts</key>
 	<array>
