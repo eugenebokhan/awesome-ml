@@ -22,9 +22,9 @@ open class TensorSlice<Element: Value>: MutableTensorType, Equatable {
     public typealias Index = [Int]
     public typealias Slice = TensorSlice<Element>
 
-    open let base: Tensor<Element>
+    public let base: Tensor<Element>
 
-    open let span: Span
+    public let span: Span
 
     open var count: Int {
         return span.count

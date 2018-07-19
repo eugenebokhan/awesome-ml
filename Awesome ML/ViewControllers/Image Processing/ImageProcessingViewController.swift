@@ -100,11 +100,11 @@ class ImageProcessingViewController: UIViewController {
     // MARK: - Notifications
     
     func setupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
     }
     
     @objc func handleNotification(_ notification: NSNotification) {
-        if notification.name == .UIApplicationDidChangeStatusBarOrientation {
+        if notification.name == UIApplication.didChangeStatusBarOrientationNotification {
             
             reloadCollectionView()
             

@@ -50,7 +50,7 @@ extension UIImage {
     convenience init?(imageBuffer: CVPixelBuffer) {
         var cgImage: CGImage?
         
-        VTCreateCGImageFromCVPixelBuffer(imageBuffer, nil, &cgImage)
+        VTCreateCGImageFromCVPixelBuffer(imageBuffer, options: nil, imageOut: &cgImage)
         
         if let cgImage = cgImage {
             self.init(cgImage: cgImage)

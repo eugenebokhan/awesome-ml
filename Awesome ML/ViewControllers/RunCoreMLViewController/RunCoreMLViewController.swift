@@ -125,75 +125,75 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
         
         if let compiledAddress = coreMLModel.localCompiledURL {
             switch coreMLModel.coreMLType {
-            case .mobileOpenPose:
+            case .mobileOpenPose?:
                 if let model = try? MobileOpenPose(contentsOf: compiledAddress) {
                     mobileOpenPose = model
                 }
-            case .tinyYOLO:
+            case .tinyYOLO?:
                 if let model = try? TinyYOLO(contentsOf: compiledAddress) {
                     tinyYOLO = model
                 }
-            case .ageNet:
+            case .ageNet?:
                 if let model = try? AgeNet(contentsOf: compiledAddress) {
                     ageNet = model
                 }
-            case .carRecognition:
+            case .carRecognition?:
                 if let model = try? CarRecognition(contentsOf: compiledAddress) {
                     carRecognition = model
                 }
-            case .cnnEmotions:
+            case .cnnEmotions?:
                 if let model = try? CNNEmotions(contentsOf: compiledAddress) {
                     cnnEmotions = model
                 }
-            case .flickrStyle:
+            case .flickrStyle?:
                 if let model = try? FlickrStyle(contentsOf: compiledAddress) {
                     flickrStyle = model
                 }
-            case .food101:
+            case .food101?:
                 if let model = try? Food101(contentsOf: compiledAddress) {
                     food101 = model
                 }
-            case .genderNet:
+            case .genderNet?:
                 if let model = try? GenderNet(contentsOf: compiledAddress) {
                     genderNet = model
                 }
-            case .googleNetPlaces:
+            case .googleNetPlaces?:
                 if let model = try? GoogLeNetPlaces(contentsOf: compiledAddress) {
                     googLeNetPlaces = model
                 }
-            case .inceptionv3:
+            case .inceptionv3?:
                 if let model = try? Inceptionv3(contentsOf: compiledAddress) {
                     inceptionv3 = model
                 }
-            case .mnist:
+            case .mnist?:
                 if let model = try? MNIST(contentsOf: compiledAddress) {
                     mnist = model
                 }
-            case .mobileNet:
+            case .mobileNet?:
                 if let model = try? MobileNet(contentsOf: compiledAddress) {
                     mobileNet = model
                 }
-            case .nudity:
+            case .nudity?:
                 if let model = try? Nudity(contentsOf: compiledAddress) {
                     nudity = model
                 }
-            case .oxford102:
+            case .oxford102?:
                 if let model = try? Oxford102(contentsOf: compiledAddress) {
                     oxford102 = model
                 }
-            case .resnet50:
+            case .resnet50?:
                 if let model = try? Resnet50(contentsOf: compiledAddress) {
                     resnet50 = model
                 }
-            case .rn1015k500:
+            case .rn1015k500?:
                 if let model = try? RN1015k500(contentsOf: compiledAddress) {
                     rn1015k500 = model
                 }
-            case .vgg16:
+            case .vgg16?:
                 if let model = try? VGG16(contentsOf: compiledAddress) {
                     vgg16 = model
                 }
-            case .visualSentimentCNN:
+            case .visualSentimentCNN?:
                 if let model = try? VisualSentimentCNN(contentsOf: compiledAddress) {
                     visualSentimentCNN = model
                 }

@@ -28,7 +28,7 @@ import UIKit
         didSet {
             if let image = firstImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[0].image = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[0].image = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -37,7 +37,7 @@ import UIKit
         didSet {
             if let image = firstSelectedImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[0].selectedImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[0].selectedImage = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -46,7 +46,7 @@ import UIKit
         didSet {
             if let image = firstImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[1].image = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[1].image = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -55,7 +55,7 @@ import UIKit
         didSet {
             if let image = firstSelectedImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[1].selectedImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[1].selectedImage = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -64,7 +64,7 @@ import UIKit
         didSet {
             if let image = firstImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[2].image = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[2].image = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -73,7 +73,7 @@ import UIKit
         didSet {
             if let image = thirdSelectedImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[2].selectedImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[2].selectedImage = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -82,7 +82,7 @@ import UIKit
         didSet {
             if let image = firstImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[3].image = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[3].image = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -91,7 +91,7 @@ import UIKit
         didSet {
             if let image = firstSelectedImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[3].selectedImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[3].selectedImage = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -100,7 +100,7 @@ import UIKit
         didSet {
             if let image = firstImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[4].image = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[4].image = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }
@@ -109,7 +109,7 @@ import UIKit
         didSet {
             if let image = firstSelectedImage {
                 var tabBarItems = self.tabBar.items as [UITabBarItem]?
-                tabBarItems?[4].selectedImage = image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                tabBarItems?[4].selectedImage = image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             }
         }
     }

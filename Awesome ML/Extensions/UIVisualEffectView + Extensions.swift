@@ -213,7 +213,7 @@ class VisualEffectView: UIVisualEffectView {
 
 public extension UIVisualEffectView {
     
-    public func fadeInEffect(_ style:UIBlurEffectStyle = .regular, withDuration duration: TimeInterval = 6.0) {
+    public func fadeInEffect(_ style:UIBlurEffect.Style = .regular, withDuration duration: TimeInterval = 6.0) {
         if #available(iOS 10.0, *) {
             let animator = UIViewPropertyAnimator(duration: duration, curve: .easeIn) {
                 self.effect = UIBlurEffect(style: style)

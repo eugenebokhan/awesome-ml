@@ -88,35 +88,35 @@ class StyleTransferCollectionViewCell: UICollectionViewCell {
         DispatchQueue.global(qos: .background).async {
             if let compiledAddress = self.coreMLModel.localCompiledURL {
                 switch self.coreMLModel.coreMLType {
-                case .fnsRainPrincess:
+                case .fnsRainPrincess?:
                     if let model = try? FNSRainPrincess(contentsOf: compiledAddress) {
                         self.fnsRainPrincess = model
                     }
-                case .fnsWave:
+                case .fnsWave?:
                     if let model = try? FNSWave(contentsOf: compiledAddress) {
                         self.fnsWave = model
                     }
-                case .fnsCandy:
+                case .fnsCandy?:
                     if let model = try? FNSCandy(contentsOf: compiledAddress) {
                         self.fnsCandy = model
                     }
-                case .fnsTheScream:
+                case .fnsTheScream?:
                     if let model = try? FNSTheScream(contentsOf: compiledAddress) {
                         self.fnsTheScream = model
                     }
-                case .fnsUndie:
+                case .fnsUndie?:
                     if let model = try? FNSUdnie(contentsOf: compiledAddress) {
                         self.fnsUndie = model
                     }
-                case .fnsLaMuse:
+                case .fnsLaMuse?:
                     if let model = try? FNSLaMuse(contentsOf: compiledAddress) {
                        self.fnsLaMuse = model
                     }
-                case .fnsMosaic:
+                case .fnsMosaic?:
                     if let model = try? FNSMosaic(contentsOf: compiledAddress) {
                         self.fnsMosaic = model
                     }
-                case .fnsFeathers:
+                case .fnsFeathers?:
                     if let model = try? FNS_Feathers(contentsOf: compiledAddress) {
                         self.fnsFeathers = model
                     }
@@ -252,24 +252,24 @@ extension StyleTransferCollectionViewCell {
         guard let resizedImageBuffer = resizedImage.buffer() else { return }
         
         switch coreMLModel.coreMLType {
-        case .normal:
+        case .normal?:
             completion(originalImage)
-        case .fnsCandy:
+        case .fnsCandy?:
             if let stylizedImageBuffer = try? fnsCandy.prediction(inputImage: resizedImageBuffer).outputImage,
                 let resultImage = UIImage(imageBuffer: stylizedImageBuffer) { completion(resultImage) }
-        case .fnsTheScream:
+        case .fnsTheScream?:
             if let stylizedImageBuffer = try? fnsTheScream.prediction(inputImage: resizedImageBuffer).outputImage,
                 let resultImage = UIImage(imageBuffer: stylizedImageBuffer) { completion(resultImage) }
-        case .fnsUndie:
+        case .fnsUndie?:
             if let stylizedImageBuffer = try? fnsUndie.prediction(inputImage: resizedImageBuffer).outputImage,
                 let resultImage = UIImage(imageBuffer: stylizedImageBuffer) { completion(resultImage) }
-        case .fnsLaMuse:
+        case .fnsLaMuse?:
             if let stylizedImageBuffer = try? fnsLaMuse.prediction(inputImage: resizedImageBuffer).outputImage,
                 let resultImage = UIImage(imageBuffer: stylizedImageBuffer) { completion(resultImage) }
-        case .fnsMosaic:
+        case .fnsMosaic?:
             if let stylizedImageBuffer = try? fnsMosaic.prediction(inputImage: resizedImageBuffer).outputImage,
                 let resultImage = UIImage(imageBuffer: stylizedImageBuffer) { completion(resultImage) }
-        case .fnsFeathers:
+        case .fnsFeathers?:
             if let stylizedImageBuffer = try? fnsFeathers.prediction(inputImage: resizedImageBuffer).outputImage,
                 let resultImage = UIImage(imageBuffer: stylizedImageBuffer) { completion(resultImage) }
         default:

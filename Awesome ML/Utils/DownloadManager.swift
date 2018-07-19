@@ -39,7 +39,7 @@ class DownloadManager: NSObject, URLSessionDownloadDelegate {
     var destinationURLForFile: URL!
     var directoryPath: String! {
         didSet {
-            destinationURLForFile = URL(fileURLWithPath: directoryPath.appendingFormat("/\(fileNameString)"))
+            destinationURLForFile = URL(fileURLWithPath: directoryPath.appendingFormat("/\(String(describing: fileNameString))"))
         }
     }
     var searchPathForDirectoriesInDomains: [String]! {
@@ -125,7 +125,7 @@ class DownloadManager: NSObject, URLSessionDownloadDelegate {
             do {
                 try FileManager.default.moveItem(at: location, to: destinationURLForFile)
                 delegate?.didFinishDownloadingFile!(destinationURL: destinationURLForFile)
-                print("Destination Local URL: \(destinationURLForFile)")
+                print("Destination Local URL: \(String(describing: destinationURLForFile))")
                 downloadTask.cancel()
             } catch {
                 print("An error occurred while moving file to destination url")

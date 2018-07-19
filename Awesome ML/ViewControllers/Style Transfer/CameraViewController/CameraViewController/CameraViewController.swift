@@ -93,13 +93,13 @@ class CameraViewController: UIViewController {
             try device!.lockForConfiguration()
             if (device?.flashMode == .auto){
                 device?.flashMode = .on
-                changeFlashModeButton.setImage(UIImage(named: "flashOn") , for: UIControlState())
+                changeFlashModeButton.setImage(UIImage(named: "flashOn") , for: UIControl.State())
             }else if (device?.flashMode == .on){
                 device?.flashMode = .off
-                changeFlashModeButton.setImage(UIImage(named: "flashOff") , for: UIControlState())
+                changeFlashModeButton.setImage(UIImage(named: "flashOff") , for: UIControl.State())
             }else{
                 device?.flashMode = .auto
-                changeFlashModeButton.setImage(UIImage(named: "flashAuto") , for: UIControlState())
+                changeFlashModeButton.setImage(UIImage(named: "flashAuto") , for: UIControl.State())
             }
             device!.unlockForConfiguration()
         } catch _ { }
@@ -281,9 +281,9 @@ class CameraViewController: UIViewController {
         focusView.alpha = 0
         focusView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         
-        self.view.bringSubview(toFront: focusView)
+        self.view.bringSubviewToFront(focusView)
         
-        UIView.animateKeyframes(withDuration: 1.5, delay: 0, options: UIViewKeyframeAnimationOptions(), animations: {
+        UIView.animateKeyframes(withDuration: 1.5, delay: 0, options: UIView.KeyframeAnimationOptions(), animations: {
             
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.15, animations: { () -> Void in
                 self.focusView.alpha = 1
@@ -413,7 +413,7 @@ class CameraViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
             
-            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 return
             }
             
@@ -437,7 +437,7 @@ class CameraViewController: UIViewController {
     
     
     func isAvailablePhotoLibrary() -> Bool{
-        return UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)
+        return UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary)
     }
     
     func transformOrientation(_ orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {

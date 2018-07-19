@@ -26,12 +26,12 @@ open class TwoDimensionalTensorSlice<Element: Value>: MutableQuadraticType, Equa
         return .rowMajor
     }
 
-    open let rows: Int
-    open let columns: Int
-    open let stride: Int
+    public let rows: Int
+    public let columns: Int
+    public let stride: Int
 
     let base: Tensor<Element>
-    open let span: Span
+    public let span: Span
 
     open func withUnsafeBufferPointer<R>(_ body: (UnsafeBufferPointer<Element>) throws -> R) rethrows -> R {
         return try base.withUnsafeBufferPointer(body)

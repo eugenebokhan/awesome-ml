@@ -19,13 +19,13 @@ class FirstLaunchCollectionViewCell: UICollectionViewCell {
             if let titleString = firstLaunchPageInfo?.title, let descString = firstLaunchPageInfo?.description {
                 let paragraph = NSMutableParagraphStyle()
                 paragraph.alignment = .center
-                let bodyText = NSMutableAttributedString(string: titleString.uppercased(), attributes: [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18),
-                                                                                                        NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0.3372146487, green: 0.3372780979, blue: 0.337210536, alpha: 1),
-                                                                                                        NSAttributedStringKey.paragraphStyle : paragraph
+                let bodyText = NSMutableAttributedString(string: titleString.uppercased(), attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18),
+                                                                                                        NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3372146487, green: 0.3372780979, blue: 0.337210536, alpha: 1),
+                                                                                                        NSAttributedString.Key.paragraphStyle : paragraph
                     ])
-                bodyText.append(NSAttributedString(string: "\n\n" + descString, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular),
-                                                                                             NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0.3372146487, green: 0.3372780979, blue: 0.337210536, alpha: 1),
-                                                                                             NSAttributedStringKey.paragraphStyle : paragraph
+                bodyText.append(NSAttributedString(string: "\n\n" + descString, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular),
+                                                                                             NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3372146487, green: 0.3372780979, blue: 0.337210536, alpha: 1),
+                                                                                             NSAttributedString.Key.paragraphStyle : paragraph
                     ]))
                 bodyTextView.attributedText = bodyText
             }

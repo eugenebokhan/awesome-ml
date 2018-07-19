@@ -481,7 +481,7 @@ extension DetailsViewController {
     func runModel(completion: @escaping () -> Void) {
         
         switch coreMLModel.coreMLType {
-        case .mobileOpenPose:
+        case .mobileOpenPose?:
             
             let openPoseViewController = OpenPoseViewController(nibName: "RunCoreMLViewController", bundle: nil) as OpenPoseViewController
             openPoseViewController.coreMLModel = coreMLModel
@@ -490,7 +490,7 @@ extension DetailsViewController {
                 completion()
             }
             
-        case .tinyYOLO:
+        case .tinyYOLO?:
             
             let tinyYOLOViewController = TinyYOLOViewController(nibName: "RunCoreMLViewController", bundle: nil) as TinyYOLOViewController
             tinyYOLOViewController.coreMLModel = coreMLModel
@@ -499,7 +499,7 @@ extension DetailsViewController {
                 completion()
             }
             
-        case .rn1015k500:
+        case .rn1015k500?:
             
             let rn1015k500ViewController = RN1015k500ViewController(nibName: "RunCoreMLViewController", bundle: nil) as RN1015k500ViewController
             rn1015k500ViewController.coreMLModel = coreMLModel

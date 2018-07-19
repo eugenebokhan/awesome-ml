@@ -24,11 +24,11 @@ open class MatrixSlice<Element: Value>: MutableQuadraticType, CustomStringConver
     public typealias Index = (Int, Int)
     public typealias Slice = MatrixSlice<Element>
 
-    open let rows: Int
-    open let columns: Int
+    public let rows: Int
+    public let columns: Int
 
-    open let base: Matrix<Element>
-    open let span: Span
+    public let base: Matrix<Element>
+    public let span: Span
 
     open func withUnsafeBufferPointer<R>(_ body: (UnsafeBufferPointer<Element>) throws -> R) rethrows -> R {
         let index = linearIndex(span.startIndex)

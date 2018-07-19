@@ -63,12 +63,12 @@ class CameraTool: NSObject {
         guard let ciimage = CIImage(image: image) else {
             return nil
         }
-        let filter = CIFilter(name: "CIExposureAdjust", withInputParameters: [kCIInputImageKey: ciimage])
+        let filter = CIFilter(name: "CIExposureAdjust", parameters: [kCIInputImageKey: ciimage])
         filter?.setDefaults()
         let brightness: CGFloat = CGFloat(2 * brightnessT)
         filter?.setValue(brightness, forKey: kCIInputEVKey)
         
-        let context = CIContext(options: [kCIContextUseSoftwareRenderer: (false)])
+        let context = CIContext(options: [CIContextOption.useSoftwareRenderer: (false)])
         let outputImage = filter?.outputImage
         let cgImage = context.createCGImage(outputImage!, from: outputImage!.extent)
         let result = UIImage(cgImage: cgImage!)
@@ -99,9 +99,9 @@ class CameraTool: NSObject {
             ] as [String : Any]
         
         let outputImage = CIFilter(name: "CIColorControls",
-                                   withInputParameters: parameters)?.outputImage
+                                   parameters: parameters)?.outputImage
         
-        let context = CIContext(options: [kCIContextUseSoftwareRenderer: (false)])
+        let context = CIContext(options: [CIContextOption.useSoftwareRenderer: (false)])
         let cgImage = context.createCGImage(outputImage!, from: outputImage!.extent)
         let result = UIImage(cgImage: cgImage!)
         return result
