@@ -8,20 +8,12 @@
 
 import UIKit
 
-public class CoreMLModel: NSObject {
+public class CoreMLModel: MachineLearningModel {
     
     // MARK: - Properties
     
-    var name: String!
-    var shortDescription: String!
-    var detailedDescription: String!
-    var license: String!
-    var image: UIImage!
-    
     var inputWidth: Int!
     var inputHeight: Int!
-    
-    var coreMLType: CoreMLType!
     
     var remoteURL: URL?
     var remoteZipURL: URL?
@@ -34,15 +26,14 @@ public class CoreMLModel: NSObject {
     
     // MARK: - Lifecycle Methods
     
-    init(name: String, coreMLType: CoreMLType, shortDescription: String, detailedDescription: String, image: UIImage?, inputWidth: Int, inputHeight: Int, remoteURL: URL?, remoteZipURL: URL?, license: String) {
+    init(name: String, machineLearningModelType: MachineLearningModelType, shortDescription: String, detailedDescriptionURL: URL, coverImage: UIImage?, inputWidth: Int, inputHeight: Int, remoteURL: URL?, remoteZipURL: URL?) {
         super.init()
         
         self.name = name
-        self.coreMLType = coreMLType
+        self.machineLearningModelType = machineLearningModelType
         self.shortDescription = shortDescription
-        self.detailedDescription = detailedDescription
-        self.license = license
-        self.image = image ?? UIImage()
+        self.detailedDescriptionURL = detailedDescriptionURL
+        self.coverImage = coverImage ?? UIImage()
         self.inputWidth = inputWidth
         self.inputHeight = inputHeight
         
@@ -57,5 +48,6 @@ public class CoreMLModel: NSObject {
         }
         
     }
-
+    
 }
+

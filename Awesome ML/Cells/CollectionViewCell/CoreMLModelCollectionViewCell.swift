@@ -49,7 +49,7 @@ class CoreMLModelCollectionViewCell: UICollectionViewCell {
     }
     
     func setupBackgrounImage() {
-        self.backgroundImageView.image = coreMLModel.image
+        self.backgroundImageView.image = coreMLModel.coverImage
     }
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum CoreMLType: String {
+public enum MachineLearningModelType: String {
     case mobileOpenPose = "MobileOpenPose"
     case tinyYOLO = "Tiny YOLO"
     case ageNet = "AgeNet"
@@ -55,4 +55,4 @@ class CoreMLStore: NSObject {
 
 }
 
-let normalModel = CoreMLModel(name: "Normal", coreMLType: .normal, shortDescription: "No Filter", detailedDescription: "", image: #imageLiteral(resourceName: "Normal Style"), inputWidth: 720, inputHeight: 720, remoteURL: nil, remoteZipURL: nil, license: "")
+let normalModel = CoreMLModel(name: "Normal", machineLearningModelType: .normal, shortDescription: "No Filter", detailedDescriptionURL: Bundle.main.url(forResource: "FNS", withExtension: "md")!, coverImage: #imageLiteral(resourceName: "Normal Style"), inputWidth: 720, inputHeight: 720, remoteURL: nil, remoteZipURL: nil)

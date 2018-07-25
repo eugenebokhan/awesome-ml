@@ -307,15 +307,20 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let descriptionTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DetailDescriptionTableViewCell") as! DetailDescriptionTableViewCell
-        descriptionTableViewCell.descriptionMarkdownView.load(markdown: coreMLModel.detailedDescription, enableImage: true)
-        descriptionTableViewCell.descriptionMarkdownView.onRendered = { height in
-            descriptionTableViewCell.backgroundViewHeightConstraint.constant = height
-            tableView.rowHeight = height + 24
-            if !self.didCalculateRowHeight {
-                self.reloadDetailsTableView()
-            }
-            self.didCalculateRowHeight = true
-        }
+        let md = SwiftyMarkdown(url: coreMLModel.detailedDescriptionURL)!
+        
+        /// Font
+        md.h1.fontName = "BlinkMacSystemFont"
+        md.h2.fontName = "BlinkMacSystemFont"
+        md.body.fontName = "BlinkMacSystemFont"
+        md.h1.fontSize = 16
+        
+        descriptionTableViewCell.descriptionTextView.attributedText = md.attributedString()
+        /// Adjust textView height
+        let width = descriptionTableViewCell.descriptionTextView.frame.width
+        let height = descriptionTableViewCell.descriptionTextView.attributedText.heightWithWidth(width: width)
+        tableView.rowHeight = height + 60
+        
         return descriptionTableViewCell
         
     }
@@ -480,7 +485,7 @@ extension DetailsViewController {
     
     func runModel(completion: @escaping () -> Void) {
         
-        switch coreMLModel.coreMLType {
+        switch coreMLModel.machineLearningModelType {
         case .mobileOpenPose?:
             
             let openPoseViewController = OpenPoseViewController(nibName: "RunCoreMLViewController", bundle: nil) as OpenPoseViewController
@@ -496,15 +501,6 @@ extension DetailsViewController {
             tinyYOLOViewController.coreMLModel = coreMLModel
             
             present(tinyYOLOViewController, animated: true) {
-                completion()
-            }
-            
-        case .rn1015k500?:
-            
-            let rn1015k500ViewController = RN1015k500ViewController(nibName: "RunCoreMLViewController", bundle: nil) as RN1015k500ViewController
-            rn1015k500ViewController.coreMLModel = coreMLModel
-            
-            present(rn1015k500ViewController, animated: true) {
                 completion()
             }
             

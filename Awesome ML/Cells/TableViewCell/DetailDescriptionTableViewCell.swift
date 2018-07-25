@@ -12,9 +12,7 @@ class DetailDescriptionTableViewCell: UITableViewCell {
     
     // MARK: - UI Elements
     
-    @IBOutlet weak var descriptionMarkdownView: MarkdownView!
-    @IBOutlet weak var backgroundViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var descriptionBackgroundView: UIView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     // Lifecycle Methods
     
@@ -22,13 +20,8 @@ class DetailDescriptionTableViewCell: UITableViewCell {
         super.awakeFromNib()
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
-        
-        descriptionBackgroundView.alpha = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            UIView.animate(withDuration: 0.4) {
-                self.descriptionBackgroundView.alpha = 1
-            }
-        }
+        descriptionTextView.isScrollEnabled = false
+        descriptionTextView.isUserInteractionEnabled = false
     }
     
     

@@ -38,7 +38,6 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
     var tinyYOLO: TinyYOLO! { didSet { visionModel = try? VNCoreMLModel(for: tinyYOLO.model) } }
     var ageNet: AgeNet! { didSet { visionModel = try? VNCoreMLModel(for: ageNet.model) } }
     var carRecognition: CarRecognition! { didSet { visionModel = try? VNCoreMLModel(for: carRecognition.model) } }
-    var cnnEmotions: CNNEmotions! { didSet { visionModel = try? VNCoreMLModel(for: cnnEmotions.model) } }
     var flickrStyle: FlickrStyle! { didSet { visionModel = try? VNCoreMLModel(for: flickrStyle.model) } }
     var food101: Food101! { didSet { visionModel = try? VNCoreMLModel(for: food101.model) } }
     var genderNet: GenderNet! { didSet { visionModel = try? VNCoreMLModel(for: genderNet.model) } }
@@ -49,8 +48,6 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
     var nudity: Nudity! { didSet { visionModel = try? VNCoreMLModel(for: nudity.model) } }
     var oxford102: Oxford102! { didSet { visionModel = try? VNCoreMLModel(for: oxford102.model) } }
     var resnet50: Resnet50! { didSet { visionModel = try? VNCoreMLModel(for: resnet50.model) } }
-    var rn1015k500: RN1015k500! { didSet { visionModel = try? VNCoreMLModel(for: rn1015k500.model) } }
-    var vgg16: VGG16! { didSet { visionModel = try? VNCoreMLModel(for: vgg16.model) } }
     var visualSentimentCNN: VisualSentimentCNN! { didSet { visionModel = try? VNCoreMLModel(for: visualSentimentCNN.model) } }
     
     // MARK: - Vision Properties
@@ -124,7 +121,7 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
     func setupCoreMLModel() {
         
         if let compiledAddress = coreMLModel.localCompiledURL {
-            switch coreMLModel.coreMLType {
+            switch coreMLModel.machineLearningModelType {
             case .mobileOpenPose?:
                 if let model = try? MobileOpenPose(contentsOf: compiledAddress) {
                     mobileOpenPose = model
@@ -140,10 +137,6 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
             case .carRecognition?:
                 if let model = try? CarRecognition(contentsOf: compiledAddress) {
                     carRecognition = model
-                }
-            case .cnnEmotions?:
-                if let model = try? CNNEmotions(contentsOf: compiledAddress) {
-                    cnnEmotions = model
                 }
             case .flickrStyle?:
                 if let model = try? FlickrStyle(contentsOf: compiledAddress) {
@@ -184,14 +177,6 @@ class RunCoreMLViewController: UIViewController, VideoCaptureDelegate {
             case .resnet50?:
                 if let model = try? Resnet50(contentsOf: compiledAddress) {
                     resnet50 = model
-                }
-            case .rn1015k500?:
-                if let model = try? RN1015k500(contentsOf: compiledAddress) {
-                    rn1015k500 = model
-                }
-            case .vgg16?:
-                if let model = try? VGG16(contentsOf: compiledAddress) {
-                    vgg16 = model
                 }
             case .visualSentimentCNN?:
                 if let model = try? VisualSentimentCNN(contentsOf: compiledAddress) {

@@ -307,9 +307,9 @@ extension ImageProcessingViewController: UIViewControllerTransitioningDelegate {
         return dismissDetailsViewController
     }
     
-    //    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    //        return interactionAssetClassViewController.interactionInProgress ? interactionAssetClassViewController : nil
-    //    }
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactionDetailsViewController.interactionInProgress ? interactionDetailsViewController : nil
+    }
     
 }
 
@@ -424,7 +424,7 @@ extension ImageProcessingViewController: UIScrollViewDelegate {
                 let indexPath = self.collectionView.indexPath(for: cell)!
                 let attributes = self.collectionView.layoutAttributesForItem(at: indexPath)!
                 let cellFrame = self.collectionView.convert(attributes.frame, to: self.view)
-                let translationY = cellFrame.origin.y / -15
+                let translationY = cellFrame.origin.y / -25
                 cell.backgroundImageTranslationY = translationY
                 cell.backgroundImageView.transform = CGAffineTransform(translationX: 0, y: translationY)
             }

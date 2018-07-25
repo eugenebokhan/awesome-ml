@@ -41,8 +41,6 @@ class StyleTransferCollectionViewCell: UICollectionViewCell {
             configureDarkViewAppearance()
         }
     }
-    var fnsWave: FNSWave!
-    var fnsRainPrincess: FNSRainPrincess!
     var fnsCandy: FNSCandy!
     var fnsTheScream: FNSTheScream!
     var fnsUndie: FNSUdnie!
@@ -79,7 +77,7 @@ class StyleTransferCollectionViewCell: UICollectionViewCell {
     func setupBackgrounImage() {
         
         DispatchQueue.main.async {
-            self.backgroundImageView.image = self.coreMLModel.image
+            self.backgroundImageView.image = self.coreMLModel.coverImage
         }
     }
     
@@ -87,15 +85,7 @@ class StyleTransferCollectionViewCell: UICollectionViewCell {
         
         DispatchQueue.global(qos: .background).async {
             if let compiledAddress = self.coreMLModel.localCompiledURL {
-                switch self.coreMLModel.coreMLType {
-                case .fnsRainPrincess?:
-                    if let model = try? FNSRainPrincess(contentsOf: compiledAddress) {
-                        self.fnsRainPrincess = model
-                    }
-                case .fnsWave?:
-                    if let model = try? FNSWave(contentsOf: compiledAddress) {
-                        self.fnsWave = model
-                    }
+                switch self.coreMLModel.machineLearningModelType {
                 case .fnsCandy?:
                     if let model = try? FNSCandy(contentsOf: compiledAddress) {
                         self.fnsCandy = model
@@ -251,7 +241,7 @@ extension StyleTransferCollectionViewCell {
         let resizedImage = originalImage.resize(to: CGSize(width: coreMLModel.inputWidth, height: coreMLModel.inputHeight))
         guard let resizedImageBuffer = resizedImage.buffer() else { return }
         
-        switch coreMLModel.coreMLType {
+        switch coreMLModel.machineLearningModelType {
         case .normal?:
             completion(originalImage)
         case .fnsCandy?:
@@ -306,7 +296,7 @@ extension StyleTransferCollectionViewCell: DownloadButtonDelegate {
     
     func configureDarkViewAppearance() {
         
-        if isModelDownloaded() || coreMLModel.coreMLType == .normal {
+        if isModelDownloaded() || coreMLModel.machineLearningModelType == .normal {
             DispatchQueue.main.async {
                 self.darkView.alpha = 0
                 self.disableDonwloadButton()
