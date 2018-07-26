@@ -782,14 +782,6 @@
 			path = "Awesome ML";
 			sourceTree = "<group>";
 		};
-		1873E8952059BAFC00A1723D /* Image Processing */ = {
-			isa = PBXGroup;
-			children = (
-				182BF46520595EEE006E3F33 /* ImageProcessingViewController.swift */,
-			);
-			path = "Image Processing";
-			sourceTree = "<group>";
-		};
 		1873E8962059BB0900A1723D /* CoreML Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,10 +1005,10 @@
 		18B5820E206A5BD600112B0E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				182BF46520595EEE006E3F33 /* ImageProcessingViewController.swift */,
 				182BF46320595CF5006E3F33 /* DetailViewController.swift */,
 				1857A459206AC50D002CEB2D /* SettingsViewController.swift */,
 				18B58215206A633800112B0E /* FirstLaunchViewController */,
-				1873E8952059BAFC00A1723D /* Image Processing */,
 				18B5820D206A5BBC00112B0E /* RunCoreMLViewController */,
 				189EED6F207937C900E23B74 /* Style Transfer */,
 			);

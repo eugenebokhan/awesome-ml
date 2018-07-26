@@ -319,7 +319,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         /// Adjust textView height
         let width = descriptionTableViewCell.descriptionTextView.frame.width
         let height = descriptionTableViewCell.descriptionTextView.attributedText.heightWithWidth(width: width)
-        tableView.rowHeight = height + 60
+        tableView.rowHeight = height * 1.7
         
         return descriptionTableViewCell
         
