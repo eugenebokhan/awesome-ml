@@ -9,8 +9,7 @@
 
 **Awesome ML** is an iOS app that is made to demonstrate different image processing CoreML models.
 
-Features
----
+## Features
 
 * Beautiful UI designed with consideration of Apple's Human Interface Guidelines.
 * Discover new CoreML models for yourself.
@@ -28,8 +27,7 @@ Features
 
 
 
-Requirements
----
+## Requirements
 
 - Xcode 9.3 or later
 - Swift 4.1
@@ -47,11 +45,6 @@ Requirements
 [2]: https://github.com/eugenebokhan
 [3]: https://www.linkedin.com/in/eugenebokhan/
 
-## Support the project
-
-<a href="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=Donation&targets-hint=&default-sum=&button-text=11&hint=&successURL=https%3A%2F%2Fgithub.com%2Feugenebokhan&quickpay=shop&account=410014480927275"><img src="Media/Donate.png" width=400>
-
-License
----
+## License
 
 [Awesome ML's license](LICENSE.md) is based on the 3-clause BSD-License.
