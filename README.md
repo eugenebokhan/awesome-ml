@@ -7,6 +7,8 @@
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
+:warning: :warning: :warning: **IMPORTANT:** I'm no longer maintaining Awesome-ML.
+
 **Awesome ML** is an iOS app that is made to demonstrate different image processing CoreML models.
 
 ## Features
